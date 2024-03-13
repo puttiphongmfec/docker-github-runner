@@ -15,5 +15,5 @@ jobs:
           node-version: 18
 
       - name: run manual yarn install command
-        run: yarn install
+        run: yarn
       
