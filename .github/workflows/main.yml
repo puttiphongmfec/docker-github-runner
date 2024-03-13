@@ -1,0 +1,19 @@
+name: 'Build Node with yarn'
+on:
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout the merged commit from PR and base branch
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: run manual yarn install command
+        run: yarn install
+      
