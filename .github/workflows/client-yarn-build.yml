@@ -10,13 +10,12 @@ jobs:
         working-directory: client
     steps:
       - name: Checkout the merged commit from PR and base branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version-file: client/package.json
-          cache: 'yarn'
 
       - name: run manual yarn install dependencies command
         run: yarn install --frozen-lockfile
